@@ -1,6 +1,7 @@
 import {useState} from "react";
+import selectionSort from "../../utils/selectionSort";
 
-const Bar = ({ height }) => <div className={"bar"} style={{ height: `${height*5}px` }}>
+const Bar = ({ height, id }) => <div id={id} className={"bar"} style={{ height: `${height*5}px` }}>
 
 </div>
 
@@ -26,7 +27,7 @@ const ChartLegend = ({ array }) => {
 }
 
 function randomLength( minLimit=10 ) {
-    const length = Math.floor(Math.random() * 100);
+    const length = Math.floor(Math.random() * 10);
     console.log(length);
     return length < minLimit ? minLimit : length;
 }
@@ -38,6 +39,59 @@ function createRandomArray() {
 function  randomHeight( minLimit = 0) {
     const height = Math.floor(Math.random() * 100);
     return height < minLimit ? minLimit : height;
+}
+
+function animateSorting( steps ) {
+    const bars = document.getElementsByClassName("bar");
+    // console.log(`bars: ${bars}`);
+    // console.log(bars[0]);
+    // console.log(`animation steps : ${steps}`);
+
+    let j = 0 ;
+    for(let i=0;i<steps.length;i++){
+        const step = steps[i];
+
+        if( step.check ) {
+            console.log(`check : ${step.data}`);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#237033";
+            }, ++j * 500);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#3ebd58";
+            }, (j * 500)+50);
+        }
+        else if( step.compare ) {
+            console.log(`compare : ${step.data}`);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#7700ff";
+                document.getElementById(`bar-no-${step.data[1]}`).style.backgroundColor="#7700ff";
+            }, ++j * 500);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#3ebd58";
+                document.getElementById(`bar-no-${step.data[1]}`).style.backgroundColor="#3ebd58";
+            }, (j * 500)+50);
+        }
+        else if( step.swap ) {
+            console.log(`swap : ${step.data}`);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#6afcf0";
+                document.getElementById(`bar-no-${step.data[2]}`).style.backgroundColor="#6afcf0";
+                document.getElementById(`bar-no-${step.data[0]}`).style.height=`${step.data[1]*5}px`;
+                document.getElementById(`bar-no-${step.data[2]}`).style.height=`${step.data[3]*5}px`;
+            }, ++j * 500);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#3ebd58";
+                document.getElementById(`bar-no-${step.data[2]}`).style.backgroundColor="#3ebd58";
+            }, (j * 500)+50);
+        }
+        else {
+            console.log(`final : ${step.data}`);
+            setTimeout(()=>{
+                document.getElementById(`bar-no-${step.data[0]}`).style.backgroundColor="#008f18";
+            }, ++j * 500);
+
+        }
+    }
 }
 
 const ChartWrapper = () => {
@@ -52,12 +106,18 @@ const ChartWrapper = () => {
             array[index] =  randomHeight();
             return <Bar
                 key={`bar-no-${index}`}
+                id={`bar-no-${index}`}
                 height={ array[index] } />
         } )
         }
-        <button className={'debug-btn'} onClick={ generateRandomGraph }>
-            refresh
-        </button>
+        <div className={'debug-bar'}>
+            <button className={'debug-btn'} onClick={ generateRandomGraph }>
+                refresh
+            </button>
+            <button className={'debug-btn'} onClick={ ()=>{ animateSorting(selectionSort(array)) } }>
+                selection sort
+            </button>
+        </div>
         <ChartLegend array={array} />
     </div>
 };

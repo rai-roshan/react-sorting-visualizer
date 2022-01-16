@@ -40,16 +40,23 @@ body {
     min-width: 5px;
     flex-grow: 1;
     border: 0.5px solid #171717;
+    transition: height 100ms;
 }
 
-.debug-btn {
+.debug-bar {
     position: absolute;
     top: 1rem;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+.debug-btn {
     border: none;
     background-color: #1ca0ff;
     font-size: large;
     border-radius: 2px;
     padding: 8px;
+    margin: 10px;
 }
 .debug-btn:hover {
     color: white;
@@ -62,5 +69,4 @@ body {
     color: #e87dcc;
     display: flex;
     flex-direction: column;
-
 }
