@@ -4,7 +4,7 @@ import ControllerBar from "./components/Controller/ControllerBar";
 
 function App() {
   return (
-    <div id="app" className="flex-xy-center">
+    <div id="app" className="flex-x-center">
         <ChartWrapper />
         <ControllerBar />
     </div>

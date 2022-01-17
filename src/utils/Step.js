@@ -1,5 +1,5 @@
 //represent each single step required in sorting algoritm
-export default class Step {
+class Step {
     constructor(_check=false, _compare=false, _swap=false, _final=false, _data=null) {
         this.check = _check;
         this.compare = _compare;
@@ -22,3 +22,5 @@ export default class Step {
     }
 
 }
+
+module.exports = Step;

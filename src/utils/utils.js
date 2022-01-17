@@ -20,7 +20,7 @@ function createRandomArray() {
     return array;
 }
 
-function  randomHeight( minLimit = 0) {
+function randomHeight( minLimit = 0) {
     const height = Math.max( minLimit, Math.floor(Math.random() * 100) );
     return height;
 }

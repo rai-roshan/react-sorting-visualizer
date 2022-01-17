@@ -40,8 +40,8 @@ function animateSorting( steps, bars, animateIntervalIds ) {
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#fc3a3a";
                 bars[step.data[2]].style.backgroundColor="#fc3a3a";
-                bars[step.data[0]].style.height=`${step.data[1]*5}px`;
-                bars[step.data[2]].style.height=`${step.data[3]*5}px`;
+                bars[step.data[0]].style.height=`${step.data[1]*3}px`;
+                bars[step.data[2]].style.height=`${step.data[3]*3}px`;
             }, ++j * animateDelay) );
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#ebe64d";

@@ -8,27 +8,29 @@ body {
     overflow: hidden;
     background-color: #171717;
 }
-.flex-xy-center {
+.flex-x-center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 #chart-wrapper {
     position: relative;
-    height: 80vh;
+    height: 50vh;
     width: 96vw;
-    background-color: transparent;
+    background-color: #2b2a2b;
     margin: 1rem;
     display: flex;
     overflow: auto;
     flex-direction: row;
+    justify-content: center;
     align-items: end;
 }
 #controller-bar {
-    height: 18vh;
+    margin: 0rem 1rem;
+    height: 50vh;
     width: 96vw;
-    background-color: #1ca0ff;
+    background-color: #b157fa;
+    /*background-color: #9e31f7;*/
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -65,8 +67,8 @@ body {
 #legend {
     position: absolute;
     top: 1rem;
-    right: 1rem;
-    color: #e87dcc;
+    left: 1rem;
+    color: #9e31f7;
     display: flex;
     flex-direction: column;
 }
