@@ -9,7 +9,7 @@ export default function selectionSort(array) {
     let i, j, min_index;
 
     for( i=0;i<l-1;i++){
-        animation.push(Step.check([i]));
+        // animation.push(Step.check([i]));
         min_index = i;
         for( j=i+1;j<l;j++){
             animation.push(Step.compare([min_index, j]));
@@ -17,8 +17,10 @@ export default function selectionSort(array) {
                 min_index = j;
             }
         }
-        swap(array, i, min_index);
-        animation.push( Step.swap([i, array[i], min_index, array[min_index]]) );
+        if(min_index!=i) {
+            swap(array, i, min_index);
+            animation.push(Step.swap([i, array[i], min_index, array[min_index]]));
+        }
         animation.push(Step.final([i]));
     }
     animation.push(Step.final([l-1]));
