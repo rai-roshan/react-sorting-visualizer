@@ -3,8 +3,7 @@ import selectionSort from "../../utils/selectionSort";
 import Bar from './Bar';
 import ChartLegend from "./Legend";
 import {
-    createRandomArray,
-    randomHeight
+    createRandomArray
 } from '../../utils/utils';
 import {
     clearAnimationIntervals,
@@ -16,11 +15,15 @@ let animateIntervalIds = [];
 let bars = [];
 
 const ChartWrapper = () => {
-    const [array, setArray] = useState( createRandomArray() );
+    const [array, setArray] = useState( [] );
 
     function generateRandomGraph() {
         setArray( createRandomArray() );
     }
+
+    useEffect(()=>{
+        generateRandomGraph();
+    }, [] );
 
     useEffect(()=>{
         bars = document.getElementsByClassName("bar");
@@ -30,7 +33,6 @@ const ChartWrapper = () => {
 
     return <div id={"chart-wrapper"} className={"flex-xy-center"}>
         { array.map( (value, index) => {
-            array[index] =  randomHeight();
             return <Bar
                 key={`bar-no-${index}`}
                 id={`bar-no-${index}`}

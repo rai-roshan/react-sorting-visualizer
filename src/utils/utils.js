@@ -7,23 +7,25 @@ function swap(array, a, b) {
 }
 
 function randomLength( minLimit=10 ) {
-    const length = Math.floor(Math.random() * 100);
+    const length = Math.max( minLimit, Math.floor(Math.random() * 100) );
     console.log(length);
-    return length < minLimit ? minLimit : length;
+    return length;
 }
 
 function createRandomArray() {
-    return [...Array(randomLength()+1).keys()].slice(1);
+    let array = [...Array(randomLength()+1).keys()].slice(1);
+    for( let i=0;i<array.length;i++)
+        array[i]=randomHeight();
+    console.log(array);
+    return array;
 }
 
 function  randomHeight( minLimit = 0) {
-    const height = Math.floor(Math.random() * 100);
-    return height < minLimit ? minLimit : height;
+    const height = Math.max( minLimit, Math.floor(Math.random() * 100) );
+    return height;
 }
 
 module.exports = {
     swap,
-    randomLength,
-    createRandomArray,
-    randomHeight
+    createRandomArray
 }
