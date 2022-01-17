@@ -1,6 +1,5 @@
-const { Step, swap} = require('./utils');
-
-// const raiData = [64 ,25 ,12 ,22 ,11];
+import Step from './Step';
+const { swap } = require('./utils');
 
 export default function selectionSort(array) {
     console.log(array);
@@ -9,7 +8,6 @@ export default function selectionSort(array) {
     let i, j, min_index;
 
     for( i=0;i<l-1;i++){
-        // animation.push(Step.check([i]));
         min_index = i;
         for( j=i+1;j<l;j++){
             animation.push(Step.compare([min_index, j]));
@@ -27,5 +25,3 @@ export default function selectionSort(array) {
     console.log(array);
     return animation;
 }
-
-// selectionSort(raiData);

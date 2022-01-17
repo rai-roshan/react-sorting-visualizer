@@ -36,7 +36,7 @@ body {
 
 .bar {
     display: flex;
-    background-color: #3ebd58;
+    background-color: #ebe64d;
     min-width: 5px;
     flex-grow: 1;
     border: 0.5px solid #171717;

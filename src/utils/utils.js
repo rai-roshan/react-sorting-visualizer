@@ -1,27 +1,4 @@
-//represent each single step required in sorting algoritm
-class Step {
-    constructor(_check=false, _compare=false, _swap=false, _final=false, _data=null) {
-        this.check = _check;
-        this.compare = _compare;
-        this.swap = _swap;
-        this.final = _final;
-        this.data = _data;
-    }
-
-    static check( _data ) {
-        return new Step(true, false, false, false, _data);
-    }
-    static compare( _data ) {
-        return new Step(false, true, false,false, _data);
-    }
-    static swap( _data ) {
-        return new Step(false, false, true, false, _data )
-    }
-    static final( _data ) {
-        return new Step(false, false, false, true, _data);
-    }
-
-}
+const Step = require('./Step');
 
 function swap(array, a, b) {
     const temp = array[a];
@@ -29,7 +6,24 @@ function swap(array, a, b) {
     array[b]=temp;
 }
 
+function randomLength( minLimit=10 ) {
+    const length = Math.floor(Math.random() * 100);
+    console.log(length);
+    return length < minLimit ? minLimit : length;
+}
+
+function createRandomArray() {
+    return [...Array(randomLength()+1).keys()].slice(1);
+}
+
+function  randomHeight( minLimit = 0) {
+    const height = Math.floor(Math.random() * 100);
+    return height < minLimit ? minLimit : height;
+}
+
 module.exports = {
-    Step,
-    swap
+    swap,
+    randomLength,
+    createRandomArray,
+    randomHeight
 }
