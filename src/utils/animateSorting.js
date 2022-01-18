@@ -1,10 +1,8 @@
 
 function clearAnimationIntervals( animateIntervalIds ) {
-    for( let i=0; i<animateIntervalIds.length; i++) {
         animateIntervalIds.forEach( timeoutId => {
             clearTimeout( timeoutId );
         });
-    }
     animateIntervalIds = [];
     console.log(animateIntervalIds);
 }

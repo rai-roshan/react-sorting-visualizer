@@ -11,10 +11,7 @@ import {
     resetBarColor
 } from '../../utils/animateSorting';
 
-let animateIntervalIds = [];
-let bars = [];
-
-const ChartWrapper = () => {
+const ChartWrapper = ( {animateIntervalIds, bars} ) => {
     const [array, setArray] = useState( [] );
 
     function generateRandomGraph() {
@@ -26,9 +23,10 @@ const ChartWrapper = () => {
     }, [] );
 
     useEffect(()=>{
-        bars = document.getElementsByClassName("bar");
-        resetBarColor(bars);
-        clearAnimationIntervals(animateIntervalIds);
+        bars.current = document.getElementsByClassName("bar");
+        resetBarColor(bars.current);
+        if(animateIntervalIds.current.length)
+            clearAnimationIntervals(animateIntervalIds.current);
     }, [array]);
 
     return <div id={"chart-wrapper"} className={"flex-xy-center"}>
@@ -43,7 +41,7 @@ const ChartWrapper = () => {
             <button className={'debug-btn'} onClick={ () => { generateRandomGraph() } }>
                 refresh
             </button>
-            <button className={'debug-btn'} onClick={ ()=>{ animateSorting(selectionSort(array), bars, animateIntervalIds) } }>
+            <button className={'debug-btn'} onClick={ ()=>{ animateSorting(selectionSort(array), bars.current, animateIntervalIds.current) } }>
                 selection sort
             </button>
         </div>
