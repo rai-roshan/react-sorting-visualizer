@@ -26,11 +26,13 @@ body {
     align-items: end;
 }
 #controller-bar {
+    position: relative;
+    display: flex;
+    justify-content: center;
     margin: 0rem 1rem;
     height: 50vh;
     width: 96vw;
-    background-color: #b157fa;
-    /*background-color: #9e31f7;*/
+    background-color: #383838;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -53,10 +55,18 @@ body {
     overflow: auto;
 }
 .debug-btn {
+    height: 5rem;
+    width: 5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: none;
-    background-color: #1ca0ff;
+    background-color: #2b2b2b;
+    color: white;
     font-size: large;
-    border-radius: 2px;
+    border-radius: 8px;
     padding: 8px;
     margin: 10px;
 }

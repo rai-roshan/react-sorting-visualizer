@@ -11,12 +11,8 @@ import {
     resetBarColor
 } from '../../utils/animateSorting';
 
-const ChartWrapper = ( {animateIntervalIds, bars} ) => {
-    const [array, setArray] = useState( [] );
+const ChartWrapper = ( {animateIntervalIds, bars, array, generateRandomGraph} ) => {
 
-    function generateRandomGraph() {
-        setArray( createRandomArray() );
-    }
 
     useEffect(()=>{
         generateRandomGraph();
@@ -37,14 +33,6 @@ const ChartWrapper = ( {animateIntervalIds, bars} ) => {
                 height={ array[index] } />
             } )
         }
-        <div className={'debug-bar'}>
-            <button className={'debug-btn'} onClick={ () => { generateRandomGraph() } }>
-                refresh
-            </button>
-            <button className={'debug-btn'} onClick={ ()=>{ animateSorting(selectionSort(array), bars.current, animateIntervalIds.current) } }>
-                selection sort
-            </button>
-        </div>
         <ChartLegend array={array} />
     </div>
 };
