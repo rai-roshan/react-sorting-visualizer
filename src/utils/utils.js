@@ -8,7 +8,7 @@ function swap(array, a, b) {
 
 function randomLength( minLimit=10 ) {
     const length = Math.max( minLimit, Math.floor(Math.random() * 100) );
-    console.log(length);
+    // console.log(length);
     return length;
 }
 
@@ -16,7 +16,7 @@ function createRandomArray() {
     let array = [...Array(randomLength()+1).keys()].slice(1);
     for( let i=0;i<array.length;i++)
         array[i]=randomHeight();
-    console.log(array);
+    // console.log(array);
     return array;
 }
 

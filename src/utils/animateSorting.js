@@ -4,7 +4,7 @@ function clearAnimationIntervals( animateIntervalIds ) {
             clearTimeout( timeoutId );
         });
     animateIntervalIds = [];
-    console.log(animateIntervalIds);
+    // console.log(animateIntervalIds);
 }
 
 function animateSorting( steps, bars, animateIntervalIds ) {
@@ -14,7 +14,7 @@ function animateSorting( steps, bars, animateIntervalIds ) {
         const step = steps[i];
 
         if( step.check ) {
-            console.log(`check : ${step.data}`);
+            // console.log(`check : ${step.data}`);
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#237033";
             }, ++j * animateDelay) );
@@ -23,7 +23,7 @@ function animateSorting( steps, bars, animateIntervalIds ) {
             }, (++j * animateDelay)) );
         }
         else if( step.compare ) {
-            console.log(`compare : ${step.data}`);
+            // console.log(`compare : ${step.data}`);
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#7700ff";
                 bars[step.data[1]].style.backgroundColor="#7700ff";
@@ -33,8 +33,17 @@ function animateSorting( steps, bars, animateIntervalIds ) {
                 bars[step.data[1]].style.backgroundColor="#ebe64d";
             }, (++j * animateDelay)) );
         }
+        else if( step.overwrite ) {
+            animateIntervalIds.push( setTimeout( ()=>{
+                bars[step.data[0]].style.backgroundColor="#fc3a3a";
+                bars[step.data[0]].style.height=`${step.data[1]*3}px`;
+            }, ++j * animateDelay) );
+            animateIntervalIds.push( setTimeout(()=>{
+                bars[step.data[0]].style.backgroundColor="#ebe64d";
+            }, (++j * animateDelay)) );
+        }
         else if( step.swap ) {
-            console.log(`swap : ${step.data}`);
+            // console.log(`swap : ${step.data}`);
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#fc3a3a";
                 bars[step.data[2]].style.backgroundColor="#fc3a3a";
@@ -47,7 +56,7 @@ function animateSorting( steps, bars, animateIntervalIds ) {
             }, (++j * animateDelay)) );
         }
         else {
-            console.log(`final : ${step.data}`);
+            // console.log(`final : ${step.data}`);
             animateIntervalIds.push( setTimeout(()=>{
                 bars[step.data[0]].style.backgroundColor="#3ebd58";
             }, ++j * animateDelay) );
