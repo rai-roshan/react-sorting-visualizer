@@ -12,8 +12,9 @@ function randomLength( minLimit=10 ) {
     return length;
 }
 
-function createRandomArray() {
-    let array = [...Array(randomLength()+1).keys()].slice(1);
+function createRandomArray(length=50) {
+    // randomLength()+1
+    let array = [...Array( length ).keys()].slice(1);
     for( let i=0;i<array.length;i++)
         array[i]=randomHeight();
     // console.log(array);

@@ -1,7 +1,7 @@
-import Step from './Step';
+const Step = require('./Step');
 const { swap } = require('./utils');
 
-export default function selectionSort(array) {
+function selectionSort(array) {
     console.log(array);
     let animation = [];
     const l = array.length;
@@ -15,7 +15,7 @@ export default function selectionSort(array) {
                 min_index = j;
             }
         }
-        if(min_index!=i) {
+        if(min_index!==i) {
             swap(array, i, min_index);
             animation.push(Step.swap([i, array[i], min_index, array[min_index]]));
         }
@@ -25,3 +25,5 @@ export default function selectionSort(array) {
     console.log(array);
     return animation;
 }
+
+module.exports = selectionSort;

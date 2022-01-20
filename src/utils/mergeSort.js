@@ -1,7 +1,6 @@
-import Step from './Step';
+const Step = require('./Step');
 
-// const arr = [12, 11, 13, 5, 6, 7 ];
-export default function mergeSort(array) {
+function mergeSort(array) {
     // console.log(`original array : ${array}`);
     let animation = [];
     mergeSortUtil(array, 0, array.length-1, animation);
@@ -9,7 +8,7 @@ export default function mergeSort(array) {
     for(let i=0;i<array.length;i++)
         animation.push(Step.final([i]));
 
-    // console.log(`merge sort : ${array}`);
+    console.log(`merge sort : ${array}`);
     // console.log(`animation : ${animation}`);
     return animation;
     //return array;
@@ -74,3 +73,4 @@ function merge(array, begin, mid, end, animation) {
 }
 
 // console.log(mergeSort(arr));
+module.exports = mergeSort;

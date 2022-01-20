@@ -4,12 +4,11 @@ function clearAnimationIntervals( animateIntervalIds ) {
             clearTimeout( timeoutId );
         });
     animateIntervalIds = [];
-    // console.log(animateIntervalIds);
 }
 
 function animateSorting( steps, bars, animateIntervalIds ) {
     let j = 0 ;
-    const animateDelay = 50;
+    const animateDelay = 10;//30; //50
     for(let i=0;i<steps.length;i++){
         const step = steps[i];
 
