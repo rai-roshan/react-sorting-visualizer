@@ -1,13 +1,8 @@
-import {useState, useEffect} from "react";
-import selectionSort from "../../utils/selectionSort";
+import {useEffect} from "react";
 import Bar from './Bar';
 import ChartLegend from "./Legend";
 import {
-    createRandomArray
-} from '../../utils/utils';
-import {
     clearAnimationIntervals,
-    animateSorting,
     resetBarColor
 } from '../../utils/animateSorting';
 

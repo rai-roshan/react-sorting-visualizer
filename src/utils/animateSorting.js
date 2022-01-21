@@ -1,12 +1,11 @@
-
-function clearAnimationIntervals( animateIntervalIds ) {
+export function clearAnimationIntervals( animateIntervalIds ) {
         animateIntervalIds.forEach( timeoutId => {
             clearTimeout( timeoutId );
         });
     animateIntervalIds = [];
 }
 
-function animateSorting( steps, bars, animateIntervalIds ) {
+export function animateSorting( steps, bars, animateIntervalIds ) {
     let j = 0 ;
     const animateDelay = 10;//30; //50
     for(let i=0;i<steps.length;i++){
@@ -65,14 +64,14 @@ function animateSorting( steps, bars, animateIntervalIds ) {
     animateIntervalIds.push( setInterval( ()=>{ clearAnimationIntervals(animateIntervalIds) }, ++j*animateDelay) );
 }
 
-function resetBarColor(bars) {
+export function resetBarColor(bars) {
     for(let i=0;i<bars.length;i++){
         bars[i].style.backgroundColor="#ebe64d";
     }
 }
 
-module.exports = {
-    clearAnimationIntervals,
-    animateSorting,
-    resetBarColor
-}
+// module.exports = {
+//     clearAnimationIntervals,
+//     animateSorting,
+//     resetBarColor
+// }

@@ -1,7 +1,7 @@
-const Step = require('./Step');
-const { swap } = require('./utils');
+import Step from "./Step";
+import { swap } from './utils';
 
-function bubbleSort( array ) {
+export default function bubbleSort( array ) {
     let animation = [];
     let i,j;
     const length = array.length;
@@ -31,4 +31,4 @@ function bubbleSort( array ) {
     return animation;
 }
 
-module.exports = bubbleSort;
+// module.exports = bubbleSort;

@@ -1,5 +1,5 @@
-const Step = require('./Step');
-const { swap } = require('./utils');
+import Step from "./Step";
+import { swap } from './utils';
 
 function partition(array, low, high, animation) {
     const pivot = array[high];
@@ -29,7 +29,7 @@ function quickSortUtil(array, low, high, animation) {
     }
 }
 
-function quickSort( array ) {
+export default function quickSort( array ) {
     let animation = [];
     quickSortUtil(array, 0, array.length-1, animation);
     console.log(array);
@@ -38,5 +38,3 @@ function quickSort( array ) {
 
 // const arr = [10, 7, 8, 9, 1, 5];
 // quickSort(arr);
-
-module.exports = quickSort;

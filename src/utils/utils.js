@@ -1,6 +1,6 @@
 const Step = require('./Step');
 
-function swap(array, a, b) {
+export function swap(array, a, b) {
     const temp = array[a];
     array[a]=array[b];
     array[b]=temp;
@@ -12,7 +12,7 @@ function randomLength( minLimit=10 ) {
     return length;
 }
 
-function createRandomArray(length=50) {
+export function createRandomArray(length=50) {
     // randomLength()+1
     let array = [...Array( length ).keys()].slice(1);
     for( let i=0;i<array.length;i++)
@@ -24,9 +24,4 @@ function createRandomArray(length=50) {
 function randomHeight( minLimit = 0) {
     const height = Math.max( minLimit, Math.floor(Math.random() * 100) );
     return height;
-}
-
-module.exports = {
-    swap,
-    createRandomArray
 }

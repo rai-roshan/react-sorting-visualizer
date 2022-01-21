@@ -1,7 +1,7 @@
-const Step = require('./Step');
-const { swap } = require('./utils');
+import Step from "./Step";
+import { swap } from './utils';
 
-function selectionSort(array) {
+export default function selectionSort(array) {
     console.log(array);
     let animation = [];
     const l = array.length;
@@ -25,5 +25,3 @@ function selectionSort(array) {
     console.log(array);
     return animation;
 }
-
-module.exports = selectionSort;

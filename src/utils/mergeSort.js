@@ -1,6 +1,7 @@
-const Step = require('./Step');
+import Step from "./Step";
+import { swap } from './utils';
 
-function mergeSort(array) {
+export default function mergeSort(array) {
     // console.log(`original array : ${array}`);
     let animation = [];
     mergeSortUtil(array, 0, array.length-1, animation);
@@ -73,4 +74,4 @@ function merge(array, begin, mid, end, animation) {
 }
 
 // console.log(mergeSort(arr));
-module.exports = mergeSort;
+// module.exports = mergeSort;
