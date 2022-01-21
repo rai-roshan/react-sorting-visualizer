@@ -2,6 +2,7 @@ import {animateSorting} from "../../utils/animateSorting";
 import selectionSort from "../../utils/selectionSort";
 import mergeSort from "../../utils/mergeSort";
 import bubbleSort from '../../utils/bubbleSort';
+import quickSort from '../../utils/quickSort';
 
 const ControllerBtns = ({ array, bars, animateIntervalIds, generateRandomGraph }) => {
     return <div className={'debug-bar'}>
@@ -23,7 +24,7 @@ const ControllerBtns = ({ array, bars, animateIntervalIds, generateRandomGraph }
             </svg>
             play
         </button>
-        <button className={'debug-btn'} onClick={ ()=>{ animateSorting( bubbleSort(array), bars.current, animateIntervalIds.current) } }>
+        <button className={'debug-btn'} onClick={ ()=>{ animateSorting( quickSort(array), bars.current, animateIntervalIds.current) } }>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
