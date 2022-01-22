@@ -1,6 +1,13 @@
 import Step from "./Step";
 import { swap } from './utils';
 
+const defaultColor = "#ebe64d";
+const checkColor = "#237033";
+const compareColor = "#7700ff";
+const swapColor = "#fc3a3a";
+const overwriteColor = "#fc3a3a";
+const finalColor = "#3ebd58";
+
 function partition(array, low, high, animation) {
     const pivot = array[high];
     let i = low-1;
@@ -38,3 +45,7 @@ export default function quickSort( array ) {
 
 // const arr = [10, 7, 8, 9, 1, 5];
 // quickSort(arr);
+
+export const quickSortOperations = [ ["default" , defaultColor] , ["compare", compareColor] , ["swap", swapColor] , ["final" , finalColor] ];
+
+export const quickSortDetails = "https://www.geeksforgeeks.org/quick-sort/";

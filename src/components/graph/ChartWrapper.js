@@ -8,19 +8,7 @@ import {
 
 const ChartWrapper = ( {animateIntervalIds, bars, array, generateRandomGraph} ) => {
 
-
-    useEffect(()=>{
-        generateRandomGraph();
-    }, [] );
-
-    useEffect(()=>{
-        bars.current = document.getElementsByClassName("bar");
-        resetBarColor(bars.current);
-        if(animateIntervalIds.current.length)
-            clearAnimationIntervals(animateIntervalIds.current);
-    }, [array]);
-
-    return <div id={"chart-wrapper"} className={"flex-xy-center"}>
+    return <div id={"chart-wrapper"} >
         { array.map( (value, index) => {
             return <Bar
                 key={`bar-no-${index}`}
@@ -28,7 +16,6 @@ const ChartWrapper = ( {animateIntervalIds, bars, array, generateRandomGraph} ) 
                 height={ array[index] } />
             } )
         }
-        <ChartLegend array={array} />
     </div>
 };
 

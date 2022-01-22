@@ -1,5 +1,7 @@
-const Bar = ({ height, id }) => <div id={id} className={"bar"} style={{ height: `${height*3}px` }}>
+const Bar = ({ height, id }) => {
+    return <div id={id} className={"bar"} style={{ height: `${height*3}px` }}>
 
-</div>
+    </div>
+}
 
 export default Bar;

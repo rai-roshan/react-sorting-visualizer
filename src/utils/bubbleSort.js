@@ -1,6 +1,13 @@
 import Step from "./Step";
 import { swap } from './utils';
 
+const defaultColor = "#ebe64d";
+const checkColor = "#237033";
+const compareColor = "#7700ff";
+const swapColor = "#fc3a3a";
+const overwriteColor = "#fc3a3a";
+const finalColor = "#3ebd58";
+
 export default function bubbleSort( array ) {
     let animation = [];
     let i,j;
@@ -31,4 +38,6 @@ export default function bubbleSort( array ) {
     return animation;
 }
 
-// module.exports = bubbleSort;
+export const bubbleSortOperations = [ ["default" , defaultColor] , ["compare", compareColor] , ["swap", swapColor] , ["final" , finalColor] ];
+
+export const bubbleSortDetails = "https://www.geeksforgeeks.org/bubble-sort/";

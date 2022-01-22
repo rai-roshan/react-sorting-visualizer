@@ -1,20 +1,40 @@
-import {animateSorting} from "../../utils/animateSorting";
-import selectionSort from "../../utils/selectionSort";
-import mergeSort from "../../utils/mergeSort";
-import bubbleSort from '../../utils/bubbleSort';
-import quickSort from '../../utils/quickSort';
+import {animateSorting, animateSpeed} from "../../utils/animateSorting";
+import selectionSort, {selectionSortOperations, selectionSortDetails} from "../../utils/selectionSort";
+import mergeSort, {mergeSortOperations, mergeSortDetails} from "../../utils/mergeSort";
+import bubbleSort, {bubbleSortOperations, bubbleSortDetails} from '../../utils/bubbleSort';
+import quickSort, {quickSortOperations, quickSortDetails} from '../../utils/quickSort';
 
-const ControllerBtns = ({ array, bars, animateIntervalIds, generateRandomGraph }) => {
+
+const ControllerBtns = ({ size, array, bars, animateIntervalIds, generateRandomGraph, algorithm, animationSpeed }) => {
+
+    const handleAlgorithm = () => {
+        console.log(`algo : ${algorithm}`);
+        switch (algorithm) {
+            case "bubble sort":
+                animateSorting( bubbleSort(array), bars.current, animateIntervalIds.current, animateSpeed(animationSpeed));
+                break;
+            case "merge sort":
+                animateSorting( mergeSort(array), bars.current, animateIntervalIds.current, animateSpeed(animationSpeed));
+                break;
+            case "selection sort":
+                animateSorting( selectionSort(array), bars.current, animateIntervalIds.current, animateSpeed(animationSpeed));
+                break;
+            default:
+                animateSorting( quickSort(array), bars.current, animateIntervalIds.current, animateSpeed(animationSpeed));
+                break;
+        }
+    }
+
     return <div className={'debug-bar'}>
-        <button className={'debug-btn'} onClick={ () => { generateRandomGraph() } }>
+        <button className={'secondary-btn'} onClick={ () => { generateRandomGraph(size) } }>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                       d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
             </svg>
-            refresh
         </button>
-        <button className={`debug-btn`}>
+        <button id={`play-btn`}
+                onClick={ ()=>{ handleAlgorithm() } }>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -22,50 +42,63 @@ const ControllerBtns = ({ array, bars, animateIntervalIds, generateRandomGraph }
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                       d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            play
         </button>
-        <button className={'debug-btn'} onClick={ ()=>{ animateSorting( quickSort(array), bars.current, animateIntervalIds.current) } }>
+        <button className={'secondary-btn'} onClick={ () => { generateRandomGraph(size) } }>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
                  stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
             </svg>
-            Algo
-        </button>
-        <button className={'debug-btn'}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-            </svg>
-            size
-        </button>
-        <button className={'debug-btn'}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                 stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-            speed
         </button>
     </div>
 }
 
-const Description = () => {
+const Description = ({ algorithm }) => {
+    let operations = null;
+    let detailsLink = null;
+    switch (algorithm) {
+            case "bubble sort":
+                operations = bubbleSortOperations;
+                detailsLink = bubbleSortDetails;
+                break;
+            case "merge sort":
+                operations = mergeSortOperations;
+                detailsLink = mergeSortDetails;
+                break;
+            case "selection sort":
+                operations = selectionSortOperations;
+                detailsLink = selectionSortDetails;
+                break;
+            default:
+                operations = quickSortOperations;
+                detailsLink = quickSortDetails;
+        }
+
     return <div id={"dock"}>
-
+        <div id={"operation-plate"}>
+            { operations.map( (op, index) => <span key={index.toString()} className={"operation"}>
+                <div className={"colorPlate"} style={{backgroundColor: op[1]}}></div>
+                <div style={{marginLeft: "4px"}}>{`${op[0]}`}</div>
+            </span>) }
+        </div>
+        <a href={detailsLink} target="_blank" id={"learn-more"}>
+            learn more about algorithm here
+        </a>
     </div>
 }
 
-const ControllerBar = ({ array, bars, animateIntervalIds, generateRandomGraph }) => {
+const ControllerBar = ({ size, array, bars, animateIntervalIds, generateRandomGraph, algorithm, animationSpeed }) => {
     return <div id={"controller-bar"}>
         <ControllerBtns
-        array={array}
-        bars={bars}
-        animateIntervalIds={animateIntervalIds}
-        generateRandomGraph={generateRandomGraph} />
-        <Description />
+            size={size}
+            algorithm={algorithm}
+            array={array}
+            bars={bars}
+            animateIntervalIds={animateIntervalIds}
+            generateRandomGraph={generateRandomGraph}
+            animationSpeed={animationSpeed} />
+        <Description
+        algorithm={algorithm} />
     </div>
 }
 
