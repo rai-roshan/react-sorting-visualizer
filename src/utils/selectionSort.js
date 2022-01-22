@@ -1,6 +1,13 @@
 import Step from "./Step";
 import { swap } from './utils';
 
+const defaultColor = "#ebe64d";
+const checkColor = "#237033";
+const compareColor = "#7700ff";
+const swapColor = "#fc3a3a";
+const overwriteColor = "#fc3a3a";
+const finalColor = "#3ebd58";
+
 export default function selectionSort(array) {
     console.log(array);
     let animation = [];
@@ -25,3 +32,7 @@ export default function selectionSort(array) {
     console.log(array);
     return animation;
 }
+
+export const selectionSortOperations = [ ["default" , defaultColor] , ["compare", compareColor] , ["swap", swapColor] , ["final" , finalColor] ];
+
+export const selectionSortDetails = "https://www.geeksforgeeks.org/selection-sort/";

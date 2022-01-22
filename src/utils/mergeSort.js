@@ -1,8 +1,14 @@
 import Step from "./Step";
 import { swap } from './utils';
 
+const defaultColor = "#ebe64d";
+const checkColor = "#237033";
+const compareColor = "#7700ff";
+const swapColor = "#fc3a3a";
+const overwriteColor = "#fc3a3a";
+const finalColor = "#3ebd58";
+
 export default function mergeSort(array) {
-    // console.log(`original array : ${array}`);
     let animation = [];
     mergeSortUtil(array, 0, array.length-1, animation);
 
@@ -10,14 +16,11 @@ export default function mergeSort(array) {
         animation.push(Step.final([i]));
 
     console.log(`merge sort : ${array}`);
-    // console.log(`animation : ${animation}`);
     return animation;
-    //return array;
 }
 
 function mergeSortUtil(array, begin, end, animation) {
 
-    // console.log(`original array util : ${array}`);
     if(begin >= end)
         return ;
 
@@ -28,10 +31,6 @@ function mergeSortUtil(array, begin, end, animation) {
 }
 
 function merge(array, begin, mid, end, animation) {
-    // console.log(`=====begin: ${begin}`);
-    // console.log(`mid: ${mid}`);
-    // console.log(`end: ${end}`);
-    // console.log(`original array merge : ${array}`);
     let leftArrSize = mid-begin+1;
     let rightArrSize = end-mid;
     let leftArr = [];
@@ -43,9 +42,6 @@ function merge(array, begin, mid, end, animation) {
     for(let jj=0;jj<rightArrSize;jj++){
         rightArr.push(array[mid+1+jj]);
     }
-    // console.log(`*****array: ${array}`);
-    // console.log(`left array : ${leftArr}`);
-    // console.log(`right array : ${rightArr}`);
 
     let i=0,j=0,k=begin;
     while(i<leftArrSize && j<rightArrSize) {
@@ -70,8 +66,10 @@ function merge(array, begin, mid, end, animation) {
         animation.push(Step.overwrite([k, rightArr[j]]));
         array[k++] = rightArr[j++];
     }
-    // console.log(`#####array: ${array}`);
 }
 
 // console.log(mergeSort(arr));
 // module.exports = mergeSort;
+export const mergeSortOperations = [ ["default" , defaultColor] , ["compare", compareColor] , ["overwrite", overwriteColor] , ["final" , finalColor] ];
+
+export const  mergeSortDetails = "https://www.geeksforgeeks.org/merge-sort/";

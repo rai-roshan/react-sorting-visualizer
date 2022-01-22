@@ -5,8 +5,9 @@ body {
 #app {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
     background-color: #171717;
+    display: flex;
+    flex-direction: column;
 }
 .flex-x-center {
     display: flex;
@@ -15,46 +16,117 @@ body {
 }
 #chart-wrapper {
     position: relative;
-    height: 50vh;
     width: 96vw;
-    background-color: #2b2a2b;
+    height: 50vh;
+    background-color: transparent;
     margin: 1rem;
     display: flex;
     overflow: auto;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: end;
 }
 #controller-bar {
-    position: relative;
+    /*position: relative;*/
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 0rem 1rem;
-    height: 50vh;
     width: 96vw;
+    height: 50vh;
     background-color: #383838;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+#navbar {
+    width: 100vw;
+    height: 4rem;
+    /*background-color: #383838;*/
+    background-color: transparent;
+    border-bottom: 1px solid #383838;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#navbar-container {
+    width: 96vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-title {
+    font-weight: bolder;
+    color: white;
+}
 
+#dropdown-section {
+    display: flex;
+    flex-direction: row;
+}
+.dropdown-container {
+   position: relative;
+    margin-right: 5px;
+}
+.dropdown-menu {
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #383838;
+    color: aliceblue;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.dropdown-options {
+    position: absolute;
+    z-index: 10;
+    top: 4rem;
+    min-width: 6rem;
+    /*height: 6rem;*/
+    background-color: #383838;
+    border-radius: 5px;
+}
+.option {
+    list-style: none;
+    text-align: left;
+    color: aliceblue;
+    padding: 8px
+}
+.option:hover {
+    background-color: #171717;
+    color: white;
+}
+.h-3 {
+    height: 20px;
+}
+.w-3 {
+    width: 20px;
+}
+.m-1 {
+    margin: 3px;
+}
 
 .bar {
-    display: flex;
+    /*display: flex;*/
     background-color: #ebe64d;
-    min-width: 5px;
+    min-width: 1px;
     flex-grow: 1;
     border: 0.5px solid #171717;
     transition: height 100ms;
 }
 
 .debug-bar {
-    position: absolute;
-    top: 1rem;
+    /*position: absolute;*/
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
+    align-items: center;
     overflow: auto;
 }
-.debug-btn {
+
+#play-btn {
     height: 5rem;
     width: 5rem;
     overflow: hidden;
@@ -66,7 +138,23 @@ body {
     background-color: #2b2b2b;
     color: white;
     font-size: large;
-    border-radius: 8px;
+    border-radius: 5rem;
+    padding: 8px;
+    margin: 10px;
+}
+.secondary-btn {
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: large;
+    border-radius: 3rem;
     padding: 8px;
     margin: 10px;
 }
@@ -76,9 +164,51 @@ body {
 
 #legend {
     position: absolute;
-    top: 1rem;
+    top: 4rem;
     left: 1rem;
     color: #9e31f7;
     display: flex;
     flex-direction: column;
+}
+
+#dock {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#operation-plate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: #2b2b2b;
+    padding: 1rem;
+}
+.operation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 1px 1rem;
+    color: aliceblue;
+}
+.colorPlate {
+    width: 1rem;
+    height: 1rem;
+}
+#learn-more {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: #2b2b2b;
+    padding: 1rem;
+    border-radius: 5px;
+    color: #fff024;
+    cursor: pointer;
 }
