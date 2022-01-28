@@ -6,6 +6,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #171717;
+    background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
 }
@@ -34,14 +35,13 @@ body {
     margin: 0rem 1rem;
     width: 96vw;
     height: 50vh;
-    background-color: #383838;
+    background-color: var(--secondaryBackgroundColor);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 #navbar {
     width: 100vw;
     height: 4rem;
-    /*background-color: #383838;*/
     background-color: transparent;
     border-bottom: 1px solid #383838;
     display: flex;
@@ -58,6 +58,7 @@ body {
 #nav-title {
     font-weight: bolder;
     color: white;
+    color: var(--titleColor);
 }
 
 #dropdown-section {
@@ -136,7 +137,9 @@ body {
     justify-content: center;
     border: none;
     background-color: #2b2b2b;
-    color: white;
+    background-color: transparent;
+    background-color: var(--actionButtonBackgroundColor);
+    color: var(--actionButtonTextColor);
     font-size: large;
     border-radius: 5rem;
     padding: 8px;
@@ -152,7 +155,9 @@ body {
     justify-content: center;
     border: none;
     background-color: #2b2b2b;
-    color: white;
+    background-color: transparent;
+    background-color: var(--actionButtonBackgroundColor);
+    color: var(--actionButtonTextColor);
     font-size: large;
     border-radius: 3rem;
     padding: 8px;
@@ -184,7 +189,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1rem;
-    background-color: #2b2b2b;
+    background-color: var(--cardPlateBackgroundColor);
+
     padding: 1rem;
 }
 .operation {
@@ -206,9 +212,22 @@ body {
     flex-wrap: wrap;
     align-items: center;
     margin-top: 1rem;
-    background-color: #2b2b2b;
+    background-color: var(--cardPlateBackgroundColor);
     padding: 1rem;
     border-radius: 5px;
     color: #fff024;
     cursor: pointer;
+}
+.themeBtn {
+    min-width: 6rem;
+    background-color: #383838;
+    border-radius: 5px;
+    border:none;
+    margin-right: 3px;
+    color: aliceblue;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
