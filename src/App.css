@@ -1,11 +1,22 @@
+:root {
+    --backgroundColor: #171717;
+    --secondaryBackgroundColor: #383838;
+    --titleColor: white;
+    --actionButtonBackgroundColor: #2b2b2b;
+    --actionButtonTextColor: white;
+    --cardPlateBackgroundColor: #2b2b2b;
+}
+
 body {
     box-sizing: border-box;
 }
 
+
+
 #app {
     height: 100vh;
     width: 100vw;
-    background-color: #171717;
+    transition: background-color 1s ease;
     background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
@@ -32,9 +43,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0rem 1rem;
+    margin: 0 1rem;
     width: 96vw;
     height: 50vh;
+    transition: background-color 1s ease;
     background-color: var(--secondaryBackgroundColor);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -57,7 +69,8 @@ body {
 }
 #nav-title {
     font-weight: bolder;
-    color: white;
+    /*color: white;*/
+    transition: color 1s ease;
     color: var(--titleColor);
 }
 
@@ -72,8 +85,10 @@ body {
 .dropdown-menu {
     cursor: pointer;
     box-sizing: border-box;
-    background-color: #383838;
-    color: aliceblue;
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--titleColor);
+    background-color: var(--cardPlateBackgroundColor);
+    /*color: aliceblue;*/
     padding: 8px;
     border-radius: 5px;
     display: flex;
@@ -86,13 +101,15 @@ body {
     top: 4rem;
     min-width: 6rem;
     /*height: 6rem;*/
-    background-color: #383838;
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--titleColor);
+    background-color: var(--cardPlateBackgroundColor);
     border-radius: 5px;
 }
 .option {
     list-style: none;
     text-align: left;
-    color: aliceblue;
+    color: inherit;
     padding: 8px
 }
 .option:hover {
@@ -114,7 +131,8 @@ body {
     background-color: #ebe64d;
     min-width: 1px;
     flex-grow: 1;
-    border: 0.5px solid #171717;
+    transition: border 1s ease;
+    border: 1px solid var(--backgroundColor);
     transition: height 100ms;
 }
 
@@ -136,10 +154,12 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #2b2b2b;
-    background-color: transparent;
-    background-color: var(--actionButtonBackgroundColor);
+    /*background-color: #2b2b2b;*/
+    /*background-color: transparent;*/
+    /*background-color: var(--actionButtonBackgroundColor);*/
+    transition: background-color 1s ease, color 1s ease;
     color: var(--actionButtonTextColor);
+    background-color: var(--backgroundColor);
     font-size: large;
     border-radius: 5rem;
     padding: 8px;
@@ -154,10 +174,12 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
-    background-color: #2b2b2b;
-    background-color: transparent;
-    background-color: var(--actionButtonBackgroundColor);
+    /*background-color: #2b2b2b;*/
+    /*background-color: transparent;*/
+    /*background-color: var(--actionButtonBackgroundColor);*/
+    transition: background-color 1s ease, color 1s ease;
     color: var(--actionButtonTextColor);
+    background-color: var(--backgroundColor);
     font-size: large;
     border-radius: 3rem;
     padding: 8px;
@@ -189,6 +211,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1rem;
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--titleColor);
     background-color: var(--cardPlateBackgroundColor);
 
     padding: 1rem;
@@ -199,7 +223,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     margin: 1px 1rem;
-    color: aliceblue;
+    color: inherit;
 }
 .colorPlate {
     width: 1rem;
@@ -212,6 +236,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     margin-top: 1rem;
+    transition: background-color 1s ease;
     background-color: var(--cardPlateBackgroundColor);
     padding: 1rem;
     border-radius: 5px;
@@ -220,11 +245,13 @@ body {
 }
 .themeBtn {
     min-width: 6rem;
-    background-color: #383838;
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--titleColor);
+    background-color: var(--cardPlateBackgroundColor);
     border-radius: 5px;
     border:none;
     margin-right: 3px;
-    color: aliceblue;
+    /*color: aliceblue;*/
     font-size: 1rem;
     cursor: pointer;
     display: flex;
