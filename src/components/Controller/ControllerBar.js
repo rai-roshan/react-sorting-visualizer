@@ -1,8 +1,8 @@
 import {animateSorting, animateSpeed} from "../../utils/animateSorting";
-import selectionSort, {selectionSortOperations, selectionSortDetails} from "../../utils/selectionSort";
-import mergeSort, {mergeSortOperations, mergeSortDetails} from "../../utils/mergeSort";
-import bubbleSort, {bubbleSortOperations, bubbleSortDetails} from '../../utils/bubbleSort';
-import quickSort, {quickSortOperations, quickSortDetails} from '../../utils/quickSort';
+import selectionSort, {selectionSortOperations, selectionSortDetails} from "../../utils/Algorithms/selectionSort";
+import mergeSort, {mergeSortOperations, mergeSortDetails} from "../../utils/Algorithms/mergeSort";
+import bubbleSort, {bubbleSortOperations, bubbleSortDetails} from '../../utils/Algorithms/bubbleSort';
+import quickSort, {quickSortOperations, quickSortDetails} from '../../utils/Algorithms/quickSort';
 
 
 const ControllerBtns = ({ size, array, bars, animateIntervalIds, generateRandomGraph, algorithm, animationSpeed }) => {
