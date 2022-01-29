@@ -1,5 +1,5 @@
-import Step from "./Step";
-import { swap } from './utils';
+import Step from "../Step";
+import { swap } from '../utils';
 
 const defaultColor = "#ebe64d";
 const checkColor = "#237033";
