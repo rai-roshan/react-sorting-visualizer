@@ -9,12 +9,12 @@ const themes = {
     cardPlateBackgroundColor: '#2b2b2b',
   },
   light: {
-    backgroundColor: 'white',
-    secondaryBackgroundColor: '#e9e6e6',
+    backgroundColor: '#e3e3e3',
+    secondaryBackgroundColor: 'white',
     titleColor: '#383838',
     actionButtonBackgroundColor: '#transparent',
     actionButtonTextColor: '#383838',
-    cardPlateBackgroundColor: '#8c8b8b',
+    cardPlateBackgroundColor: '#c4c4c4',
   },
 };
 
@@ -28,7 +28,7 @@ export const ThemeSelectorContext = createContext({
   themeName: 'dark',
 });
 
-export default ({ children }) => {
+const ThemeContext = ({ children }) => {
   const [themeName, setThemeName] = useState('dark');
   const [theme, setTheme] = useState(themes[themeName]);
   const [isLight, setIsLight] = useState(null);
@@ -62,3 +62,5 @@ export default ({ children }) => {
     </ThemeSelectorContext.Provider>
   );
 };
+
+export default ThemeContext;
