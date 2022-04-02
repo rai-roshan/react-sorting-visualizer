@@ -11,7 +11,7 @@ if found helpful a ⭐ would be committable ;)
 </p>
 
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/46826283/150663915-3934e798-4ed5-4d69-83b6-c6e0889f42c9.png" alt="project screen shot" />
+    <img src="https://user-images.githubusercontent.com/46826283/161393382-a6c66813-3dd3-4532-b347-9ca54c386cda.gif" alt="project screen shot" />
 </p>
 
 
