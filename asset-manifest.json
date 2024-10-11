@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "//react-sorting-visualizer/static/css/main.cf609553.css",
-    "main.js": "//react-sorting-visualizer/static/js/main.b4caac47.js",
-    "static/js/787.5f7281f4.chunk.js": "//react-sorting-visualizer/static/js/787.5f7281f4.chunk.js",
-    "index.html": "//react-sorting-visualizer/index.html",
-    "main.cf609553.css.map": "//react-sorting-visualizer/static/css/main.cf609553.css.map",
-    "main.b4caac47.js.map": "//react-sorting-visualizer/static/js/main.b4caac47.js.map",
-    "787.5f7281f4.chunk.js.map": "//react-sorting-visualizer/static/js/787.5f7281f4.chunk.js.map"
+    "main.css": "/static/css/main.cf609553.css",
+    "main.js": "/static/js/main.849e383e.js",
+    "static/js/787.5f7281f4.chunk.js": "/static/js/787.5f7281f4.chunk.js",
+    "index.html": "/index.html",
+    "main.cf609553.css.map": "/static/css/main.cf609553.css.map",
+    "main.849e383e.js.map": "/static/js/main.849e383e.js.map",
+    "787.5f7281f4.chunk.js.map": "/static/js/787.5f7281f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cf609553.css",
-    "static/js/main.b4caac47.js"
+    "static/js/main.849e383e.js"
   ]
 }
