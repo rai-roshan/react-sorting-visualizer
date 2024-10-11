@@ -5,7 +5,7 @@ A SPA to practice the Algorithm + React js concept and best practices.
 
 <p align="center">
 check for yourself , project is live 
-<a href="https://react-sorting-visualizer.herokuapp.com/">here</a>
+<a href="https://rai-roshan.github.io/react-sorting-visualizer/">here</a>
 <br/>
 if found helpful a ⭐ would be committable ;)
 </p>
